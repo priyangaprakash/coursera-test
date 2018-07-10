@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app = "myFirstApp">
+    <title>Angular Js Lecture 1</title>
+    <script src = "angular.min.js"></script>
+    <script src = "app.js"></script>
+    <body>
+      <h1>My first Angular JS app in coursere</h1>
+      <div ng-controller="myFirstController">
+          Name: {{name}}
+          <br>
+          Greetings: {{sayHello()}}   
+          <br>  
+          <input type = "text" ng-model = "name">
+          <br>
+          Inside my input is: {{name}}        
+      </div>
+    </body>
+</html>

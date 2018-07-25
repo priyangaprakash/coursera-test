@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <title>My Name calci</title>
+    <script src = "angular.min.js"></script>    
+    <script src = "digestapp.js"></script>
+    <body>
+        
+        <div ng-app = "digestApp" ng-controller = "digestController">
+            <h1>Digest cycle</h1>
+            {{name}}
+            <button ng-click = "myWatcher()">Log # of watchers</button>
+            <button ng-click = "countOnce()"># of once</button>
+            <button ng-click = "countUp()"># of Up</button>
+            <!--The below will work correctly even if we remove the $scope.$watch-->
+            OnceCount: {{onceCount}}
+            <br>
+            Counter:{{counter}}
+        </div>
+    </body>
+</html>

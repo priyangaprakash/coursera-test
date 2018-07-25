@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <title>My Name calci</title>
+    <script src = "angular.min.js"></script>
+    <script src = "app.js"></script>
+   
+    <body>
+        <div ng-app = "filterApp" ng-controller="filterController">
+            <h1>Upper Case Filter</h1>
+            <p>Name : {{oup}}
+            <p>Print in lower case :{{oup|lowercase}}</p> <!--Applying filters in html-->
+            <p>Price in javascript filter: {{price}}</p>
+            <p>Price in html filter:{{cost | currency:"Rs:":4}}</p>
+            <p>Custom filter output:{{customMgs()}}</p>
+            <p>Custom filter inside html tag: {{"We likes to wear traditional clothes"|custom}}</p>
+            <p>Custom filter inside html tag in upper case: {{"We likes to wear traditional clothes"|custom|uppercase}}</p>
+            <p>Custom filter with argument:{{"I need some coffee"|param:"coffee":"Tea"}}</p>
+        </div>
+       
+    </body>
+</html>

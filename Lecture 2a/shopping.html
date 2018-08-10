@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Hello coursera!
+</title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "shoppingApp.js"></script>
+</head>
+<body>
+    <div ng-app = "shoppingApp" ng-controller = "shoppingController">
+        <h1>Shopping List app using ng-repeat</h1>
+        <!--shopping list 1-->
+        <ul>
+            <li ng-repeat = "item in shoppingList1">{{item}}</li>
+        </ul>
+        <!--shopping list 2-->
+        <ul>
+            <li ng-repeat = "item in shoppingList2">Buy {{item.qty}} of {{item.name}} (s)</li>
+        </ul>
+        <!--shopping list 3-->
+        <input type = "text" ng-model = "shoppingList2[0].qty"> <!--Setting watcher for first item qty in the list-->
+        <ul>
+            <li ng-repeat = "item in shoppingList2"><b>{{$index+1}}</b> Buy {{item.qty}} of {{item.name}} (s)</li>
+        </ul>
+        <!--Adding item to the list-->
+        <h2>Add item to the list</h2>
+        <input type = "text" ng-model="newItemName" placeholder="Item name">
+        <input type="text" ng-model="newItemQty" placeholder="Item qty">
+        <button ng-click = "addItem()">Add Item</button><br>
+        <br>
+
+        <!--shopping list 1 using filters-->
+        <input type="text" ng-model = "search" placeholder="Search item">
+        <ul>
+            <li ng-repeat = "item in shoppingList1 | filter:search">{{item}}</li>
+        </ul>
+    </div>
+</body>

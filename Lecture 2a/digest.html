@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html  ng-app = "digestApp" >
+<title>
+    Hello coursera!
+</title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "digestApp.js"></script>
+</head>
+<body>
+    <div ng-controller="digestController">
+       <button ng-click = "numberOfWatchers()"># of watchers</button><br>
+        <button ng-click = "onceCount()">count is updated once</button><br>
+        <button ng-click = "upOnceCount()">counter is incrementing every time</button><br>
+         <input type = "text" ng-model = "name"> <!--Now the number of watcher will become 4-->
+
+
+        <!--
+            here if we use these properties here means we don't want to set the $watch manually in app.js, however the watcher
+            count will be updated
+        Once counter: {{countOnce}}<br>
+        Regular counter: {{counter}}<br>
+        -->
+         Once counter: {{countOnce}}<br>
+        Regular counter: {{counter}}<br>
+
+        <button ng-click = "myCounter()">My counter</button>
+        My counter: {{cntr}}
+    </div>
+</body>
+</html>

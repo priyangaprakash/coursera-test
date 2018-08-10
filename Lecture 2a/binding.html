@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Hello coursera!
+</title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "bindingApp.js"></script>
+</head>
+<body>
+    <div ng-app ="bindingApp" ng-controller = "bindingController">
+        <button ng-click="showNumberOfWatchers()"># of watchers</button><br>
+        <button ng-click = "setFullName()">Set full name</button><br>
+        Full name: {{::fullName}}<br>
+        <button ng-click="logFullName()">Log full name</button><br>
+        <button ng-click = "logFirstName()">Log first name</button><br>
+        <div>
+            <input type = "text" ng-model = "firstName">
+        </div>
+    </div>
+</body>

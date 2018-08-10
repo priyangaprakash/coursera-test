@@ -1,9 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html  ng-app = "myfilterApp" >
 <title>
     Hello coursera!
 </title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "app.js"></script>
+</head>
 <body>
-<h1>Hello Git and github!!</h1>
+<h1>Working with filters</h1>
+<div ng-controller = "filterController">
+    Name in uppercase: {{capsname}}<br>
+    Message in uppercase : {{sayMessage()}}<br>
+    Cost: {{cost | currency}}<br>
+    Cost with custom arguments: {{cost | currency:"Rs": 5}} <!--{{value | currency:"custom symbol": decimal places}}-->
+</div>
+
+<div ng-controller="cFilterController">
+    {{check}} <br>
+    {{sayCustomMessage()}}<br>
+    {{res | custom}}<br>
+    <!--Chain filters by '|' character-->
+    {{res | custom | uppercase}} <br>
+    <!--filters with arguments-->
+    {{res | truth:'me':'her'}}<br>  
+    <!--chaining the filters with the custom argumented filters-->
+    {{res | truth:'me':'him'|uppercase}}
+</div>
 </body>
     </html>

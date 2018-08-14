@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app = "scopeInher">
+<title>
+    Hello coursera!
+</title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "scopeInher.js"></script>
+</head>
+<body>
+    <div ng-controller = "parentController1">
+        Parent: {{parentvalue}}
+        <div ng-controller = "childController1">
+            Child: {{parentvalue}}
+        </div>
+    </div>
+
+    <div ng-controller="parentController2 as parent">
+        Parent : {{parent.value}}
+        <div ng-controller="childController2 as child">
+         child : {{child.value}}<br>
+
+         Parent inside childController2 : {{parent.value}}
+        </div>
+    </div>
+</body>

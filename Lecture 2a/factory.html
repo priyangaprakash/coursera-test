@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app = "factory">
+<title>
+    Hello coursera!
+</title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "factory.js"></script>
+</head>
+<body>
+     <div ng-controller="shoppingList1Ctrl as item">        
+        <input type = "text" ng-model = "item.name" placeholder="Item name">
+        <input type = "text" ng-model = "item.qty" placeholder="Item quantity">
+        <button ng-click = "item.addItem();">Add item to the list</button>
+        <div>
+             <ol>
+        <li ng-repeat = "it in item.items">
+           {{it.qty}} of {{it.name}}
+           <button ng-click = "item.removeItem($index);">Remove</button>
+        </li>
+        </ol> 
+        </div>
+        <div>
+            Error: {{item.errorMessage}}
+        </div>
+    </div>
+
+    <div ng-controller="shoppingList2Ctrl as item">        
+        <input type = "text" ng-model = "item.name" placeholder="Item name">
+        <input type = "text" ng-model = "item.qty" placeholder="Item quantity">
+        <button ng-click = "item.addItem();">Add item to the list</button>
+        <div>
+             <ol>
+        <li ng-repeat = "it in item.items">
+           {{it.qty}} of {{it.name}}
+           <button ng-click = "item.removeItem($index);">Remove</button>
+        </li>
+        </ol> 
+        </div>
+        <div>
+            Error: {{item.errorMessage}}
+        </div>
+    </div>
+</body>

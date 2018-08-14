@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app = "service1">
+<title>
+    Hello coursera!
+</title>
+<head>
+    <script src = "angular.min.js"></script>
+    <script src = "service1.js"></script>
+</head>
+<body>
+    <div ng-controller="shoppingListAdd as item">
+        
+        <input type = "text" ng-model = "item.itemN" placeholder="Item name">
+        <input type = "text" ng-model = "item.itemQ" placeholder="Item quantity">
+        <button ng-click = "item.addItem();">Add item to the list</button>
+    </div>
+    <div ng-controller="shoppingListShow as showlist">
+         <ol>
+        <li ng-repeat = "item in showlist.items">
+           {{item.qty}} of {{item.name}}
+           <button ng-click = "showlist.removeItem($index);">Remove</button>
+        </li>
+        </ol> 
+    </div>
+</body>
+</html>

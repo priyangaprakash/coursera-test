@@ -10,14 +10,15 @@
       <div ng-controller="NarrowItDownController as menu">
         <h3>List of Menu Categories</h3>
         <input type = "text" ng-model = "menu.desc" >
-        <button ng-click="menu.getItems(menu.desc);">menu </button>
-        <!-- <ul>
-          <li ng-repeat="item in menu.items">
+        <button ng-click="menu.getSearchedMenuItems(menu.desc);">menu </button>
+        <ul>
+          <li ng-repeat="item in menu.check">
             <b>Name</b> {{item.name}}
+            <b>ShortName</b>{{item.short_name}}
             <b>Description:</b>{{item.description}}
             
           </li>
-        </ul>  -->
-        {{menu.check}}
+        </ul> 
+        <!-- {{menu.check}} -->
       </div>
   </body>
